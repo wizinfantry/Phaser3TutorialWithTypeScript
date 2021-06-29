@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { preloadGame, playGame } from './000001/endlessRunnerGame005';
+import { playGame } from './000001/stickHero';
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.WEBGL,
@@ -7,8 +7,8 @@ const config: Phaser.Types.Core.GameConfig = {
 	scale: {
 		mode: Phaser.Scale.FIT,
 		autoCenter: Phaser.Scale.CENTER_BOTH,
-		width: 1334,
-		height: 750,
+		width: 750,
+		height: 1334,
 	},
 	render: {
 		pixelArt: true,
@@ -19,7 +19,7 @@ const config: Phaser.Types.Core.GameConfig = {
 			debug: false
 		}
 	},
-	scene: [preloadGame, playGame],
+	scene: [playGame],
 }
 
 export default new Phaser.Game(config)
