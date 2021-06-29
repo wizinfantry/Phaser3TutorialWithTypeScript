@@ -1,18 +1,17 @@
 import Phaser from 'phaser';
-import { playGame } from './000001/stringAvoiderGame';
+import { preloadGame, playGame } from './000001/endlessRunnerGame005';
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.WEBGL,
-	backgroundColor: 'black',
+	backgroundColor: 0x0c88c7,
 	scale: {
 		mode: Phaser.Scale.FIT,
 		autoCenter: Phaser.Scale.CENTER_BOTH,
-		width: 640,
-		height: 960,
+		width: 1334,
+		height: 750,
 	},
 	render: {
 		pixelArt: true,
-		roundPixels: true
 	},
 	physics: {
 		default: 'arcade',
@@ -20,7 +19,7 @@ const config: Phaser.Types.Core.GameConfig = {
 			debug: false
 		}
 	},
-	scene: [playGame],
+	scene: [preloadGame, playGame],
 }
 
 export default new Phaser.Game(config)

@@ -84,6 +84,9 @@ export class playGame extends Phaser.Scene {
     }
 
     preload(): void {
+        this.load.atlas('atlasSymbol', 'assets/atlas/atlas-symbol.png', 'assets/atlas/atlas-symbol.json');
+        this.load.atlas('atlasReelsui', 'assets/atlas/atlas-reelsui.png', 'assets/atlas/atlas-reelsui.json');
+
         // preloading all level images, PNG images with transparency
         for (let i = 1; i <= gameLevels.length; i++) {
             this.load.image('level' + i, 'assets/sprites/level' + i + '.png');
@@ -177,6 +180,10 @@ export class playGame extends Phaser.Scene {
         this.segments = [];
         this.gameOver = false;
         this.consumeString = false;
+
+        let atlasTexture = this.textures.get('atlasReelsui');
+        let frames = atlasTexture.getFrameNames();
+        this.add.sprite(Number(this.game.config.width) / 2, Number(this.game.config.height) / 2, 'atlasReelsui' , frames[6]);
     }
 
     /**
