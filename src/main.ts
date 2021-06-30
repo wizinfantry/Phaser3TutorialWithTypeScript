@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { playGame } from './000001/stickHero';
+import { playGame } from './000001/stickHero001';
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.WEBGL,
