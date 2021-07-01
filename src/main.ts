@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { playGame } from './000001/stickHero001';
+import { playGame } from './000001/oneTapRpg';
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.WEBGL,
@@ -14,9 +14,12 @@ const config: Phaser.Types.Core.GameConfig = {
 		pixelArt: true,
 	},
 	physics: {
-		default: 'arcade',
-		arcade: {
-			debug: false
+		default: 'matter',
+		matter: {
+			debug: false,
+			gravity: {
+				y: 1
+			}
 		}
 	},
 	scene: [playGame],
